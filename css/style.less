@@ -1,0 +1,71 @@
+@font_size_header: 20px;
+@color_text_header: #2543DA;
+@font_size_desc_header: 14px;
+
+.nav-bar(@color_back:#F79F58, @color_text:#fff, @size_title:30px, @size_desc:12px) 
+when (@size_title > 16px),(@size_desc < 15px) and (@color_back < #000) {
+	width: 100%;
+	height: 80px;
+	background-color: lighten(@color_back, 10%);
+	position: relative;
+	min-height: 50px;
+	margin-bottom: round(19.6px / 4px);
+	border: 1px solid darken(@color_back, 10%);	
+	color: @color_text;
+	h1{
+		position: relative;
+		margin-top: 14px;
+		margin-left: 20px;
+		margin-bottom: 0;
+		font-size: @size_title;
+	}
+	p{
+		position: relative;		
+		font-size: @size_desc;
+		margin-top: 0;
+		margin-left: 30px;
+	}
+}
+
+.nav1{
+	.nav-bar(#D92D2D);
+}
+
+.nav2{
+	.nav-bar(#403CDB,#98E6F7,40px,16px);
+}
+
+#namespace{
+	.button(@back_color,@border_color,@text_color){
+		padding: 10px 16px;
+		font-size: 14px;
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid @back_color;
+		border-radius: percentage(5/100);
+		color: @text_color;
+		background-color: @back_color;
+		&:hover{
+			background-color: darken(@back_color,20%);
+		}
+	}
+}
+
+.btn-default{
+	#namespace >.button(#fff,#ccc, #636363);
+}
+.btn-blue{
+	#namespace >.button(#4B4BE0,#ccc, #fff);
+}
+
+.btn-red{
+	#namespace >.button(#FE5959,#ccc, #fff);
+}
+
+.btn-orange{
+	#namespace >.button(#F98B2A,#ccc, #fff);
+}
+
+.btn-green{
+	#namespace >.button(#23D169,#ccc, #fff);
+}
